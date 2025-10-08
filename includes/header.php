@@ -14,16 +14,20 @@ require_once __DIR__ . '/functions.php';
 <body>
 <header class="site-header">
   <div class="container">
-    <h1><a href="/public/index.php">Mon Livre d'or</a></h1>
+    <h1><a href="./index.php">Mon Livre d'or</a></h1>
     <nav>
-      <a href="/public/livre-or.php">Livre d'or</a>
+      <!-- <a href="/public/livre-or.php">Livre d'or</a> -->
+      <a href="./livre-or.php">Livre d'or</a>
       <?php if (is_logged()): ?>
-        <a href="/public/commentaire.php">Ajouter un commentaire</a>
-        <a href="/public/profil.php">Profil (<?php echo e($_SESSION['login'] ?? ''); ?>)</a>
+        <!-- <a href="/public/commentaire.php">Ajouter un commentaire</a> -->
+        <a href="./commentaire.php">Ajouter un commentaire</a>
+        <a href="./profil.php">Profil (<?php echo e($_SESSION['login'] ?? ''); ?>)</a>
         <a href="/public/logout.php">Déconnexion</a>
       <?php else: ?>
-        <a href="/public/inscription.php">Inscription</a>
-        <a href="/public/connexion.php">Connexion</a>
+        <!-- <a href="/public/inscription.php">Inscription</a> -->
+        <a href="./inscription.php">Inscription</a>
+        <!-- <a href="/public/connexion.php">Connexion</a> -->
+        <a href="./connexion.php">Connexion</a>
       <?php endif; ?>
     </nav>
   </div>

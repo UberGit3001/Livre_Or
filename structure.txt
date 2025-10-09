@@ -1,0 +1,23 @@
+<pres>
+
+LivreOr/
+├── config/
+|   ├── db.php
+|
+├── includes/│   
+│   ├── functions.php
+|   ├── header.php
+│   ├── footer.php
+├── public/
+│   ├── index.php
+|   ├── commentaire.php
+│   ├── livre-or.php
+│   ├── logout.php
+│   ├── login.php
+│   ├── inscription.php
+│   ├── connexion.php
+|   ├── profil.php
+|   ├── style.css
+├──
+
+</pres>

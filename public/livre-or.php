@@ -22,7 +22,7 @@ $comments = $stmt->fetchAll();
       <article class="comment">
         <header>
           <strong><?php echo e($c['login']); ?></strong>
-          <time><?php echo (new DateTime($c['date']))->format('d/m/Y'); ?></time>
+          <time><?php echo (new DateTime($c['date']))->format('d/m/Y - h:i:s'); ?></time>
         </header>
         <p><?php echo nl2br(e($c['commentaire'])); ?></p>
       </article>

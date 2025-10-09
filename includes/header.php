@@ -22,7 +22,8 @@ require_once __DIR__ . '/functions.php';
         <!-- <a href="/public/commentaire.php">Ajouter un commentaire</a> -->
         <a href="./commentaire.php">Ajouter un commentaire</a>
         <a href="./profil.php">Profil (<?php echo e($_SESSION['login'] ?? ''); ?>)</a>
-        <a href="/public/logout.php">Déconnexion</a>
+        <!-- <a href="/public/logout.php">Déconnexion</a> -->
+        <a href="./logout.php">Déconnexion</a>
       <?php else: ?>
         <!-- <a href="/public/inscription.php">Inscription</a> -->
         <a href="./inscription.php">Inscription</a>

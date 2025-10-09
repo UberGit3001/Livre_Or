@@ -9,10 +9,12 @@ $errors = [];
 $user = get_user_by_id($pdo, (int)$_SESSION['user_id']);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+     
     if (!check_csrf($_POST['csrf_token'] ?? '')) {
         $errors[] = "Requête invalide (CSRF).";
     }
 
+    
     $new_login = trim($_POST['login'] ?? '');
     $new_password = $_POST['password'] ?? '';
     $new_password_confirm = $_POST['password_confirm'] ?? '';

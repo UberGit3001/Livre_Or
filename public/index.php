@@ -1,4 +1,11 @@
 <?php
+
+// session_start();
+if (isset($_SESSION['logout_message'])) {
+    echo '<div class="alert alert-success">' . $_SESSION['logout_message'] . '</div>';
+    unset($_SESSION['logout_message']);
+}
+
 require_once __DIR__ . '/../includes/header.php';
 ?>
 <h2>Bienvenue sur le livre d'or</h2>
@@ -6,3 +13,4 @@ require_once __DIR__ . '/../includes/header.php';
 
 <?php
 require_once __DIR__ . '/../includes/footer.php';
+?>

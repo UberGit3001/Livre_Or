@@ -10,6 +10,13 @@ require_once __DIR__ . '/functions.php';
   <title>Livre d'or</title>
   <!-- <link rel="stylesheet" href="/public/style.css"> -->
   <link rel="stylesheet" href="./style.css">
+  
+  <script>
+    let tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    document.cookie = "timezone=" + tz + "; path=/"; // Set cookie for entire site
+    console.log(tz);// ex: "Europe/Paris"
+  </script>
+
 </head>
 <body>
 <header class="site-header">

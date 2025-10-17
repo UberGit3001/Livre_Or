@@ -1,6 +1,9 @@
 <?php
 require_once __DIR__ . '/../includes/header.php';
 
+// Définir le fuseau horaire (cookie ou UTC par défaut)
+date_default_timezone_set($_COOKIE['timezone'] ?? 'UTC');
+
 // récupération commentaires + join utilisateur
 $stmt = $pdo->query('SELECT c.commentaire, c.date, u.login FROM commentaires c JOIN utilisateurs u ON c.id_utilisateur = u.id ORDER BY c.date DESC');
 $comments = $stmt->fetchAll();
@@ -22,7 +25,9 @@ $comments = $stmt->fetchAll();
       <article class="comment">
         <header>
           <strong><?php echo e($c['login']); ?></strong>
-          <time><?php echo (new DateTime($c['date']))->format('d/m/Y - h:i:s'); ?></time>
+          <time>
+            <?php echo "<small>" . (new DateTime($c['date']))->format('d/m/Y - H:i:s') . "</small>"; ?>&nbsp;.
+          </time>
         </header>
         <p><?php echo nl2br(e($c['commentaire'])); ?></p>
       </article>

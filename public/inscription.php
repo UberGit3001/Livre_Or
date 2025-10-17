@@ -20,9 +20,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($password !== $password_confirm) $errors[] = "Les mots de passe ne correspondent pas.";
 
     // --- 4. Vérifications avancées de la complexité du mot de passe ---
-    if (!preg_match('/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[\W_]).{8,}$/', $password)) {
+    if (!preg_match('/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[\W_,&,-,.,@]).{8,}$/', $password)) {
         $errors[] = "Le mot de passe doit contenir au moins 8 caractères, 
-        avec une majuscule, une minuscule, un chiffre et un symbole.";
+        avec une majuscule, une minuscule, un chiffre et/ou l'un de ces quatre symboles.";
     }
 
       // --- 5. vérifier unicité du login ---

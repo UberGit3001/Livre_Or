@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors[] = "Requête invalide (CSRF).";
     }
 
-    $comment = trim($_POST['commentaire'] ?? '');
+    $comment = htmlspecialchars(trim($_POST['commentaire'] ?? ''));
     if ($comment === '') $errors[] = "Le commentaire ne peut pas être vide.";
 
     if (empty($errors)) {
